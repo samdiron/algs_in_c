@@ -8,17 +8,15 @@ int main() {
     BSTNode_t* root = NULL;
 
     // Insert nodes into the binary search tree
-    root = insertNode(root, 50);
-    insertNode(root, 30);
-    insertNode(root, 10);
-    insertNode(root, 20);
-    insertNode(root, 40);
-    insertNode(root, 45);
-    insertNode(root, 47);
-    insertNode(root, 70);
-    insertNode(root, 80);
-    insertNode(root, 90);
-    insertNode(root, 60);
+    root = insertNode(root, 0);
+    
+    for (int i = -1000; i < 1000; i++)
+    {
+        if(0 != i) 
+        {
+            insertNode(root, i);
+        };
+    }
 
     // Search for a node with key 60
     if (searchNode(root, 60) != NULL) {
@@ -41,6 +39,7 @@ int main() {
     // Perform in-order traversal
     inOrder(root);
     printf("\n");
+    
 
     BSTNode_t* temp = deleteNode(root, 40);
     printf("After Delete: \n");

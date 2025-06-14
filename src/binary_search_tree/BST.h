@@ -185,7 +185,7 @@ inline void freeNode(BSTNode_t* root)
     freeNode(root->r);
   };
 
+  printf("node->%d free\n", root->val);
   free(root);
-  printf("node free\n");
 
 }
