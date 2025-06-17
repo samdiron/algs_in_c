@@ -17,14 +17,14 @@ BSTNode_t* newNodeCreate(int value);
 BSTNode_t* findMIN(BSTNode_t* root);
 BSTNode_t* insertNode(BSTNode_t* node, int value);
 BSTNode_t* searchNode(BSTNode_t* root, int target);
+BSTNode_t* deleteNode(BSTNode_t* root, int target);
 
 void inOrder(BSTNode_t* root);
 void preOrder(BSTNode_t* root);
 void postOreder(BSTNode_t* root);
-
-
-BSTNode_t* deleteNode(BSTNode_t* root, int target);
 void freeNode(BSTNode_t* root);
+
+
 
 inline BSTNode_t* newNodeCreate(int value) 
 {
@@ -35,21 +35,6 @@ inline BSTNode_t* newNodeCreate(int value)
   temp->l = NULL;
   temp->r = NULL;
   return temp;
-}
-
-inline BSTNode_t* searchNode(BSTNode_t* root, int target)
-{
-  if (NULL == root || root->val == target) 
-  {
-    return root;
-  }
-
-  if (root->val < target)
-  {
-    return searchNode(root->r, target);
-  }
-  return searchNode(root->l, target);
-
 }
 
 inline BSTNode_t* insertNode(BSTNode_t* node, int value)
@@ -68,6 +53,22 @@ inline BSTNode_t* insertNode(BSTNode_t* node, int value)
   }
   return node;
 }
+
+inline BSTNode_t* searchNode(BSTNode_t* root, int target)
+{
+  if (NULL == root || root->val == target) 
+  {
+    return root;
+  }
+
+  if (root->val < target)
+  {
+    return searchNode(root->r, target);
+  }
+  return searchNode(root->l, target);
+
+}
+
 
 inline void postOreder(BSTNode_t* root)
 {

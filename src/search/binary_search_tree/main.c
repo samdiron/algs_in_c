@@ -10,12 +10,13 @@ int main() {
     // Insert nodes into the binary search tree
     root = insertNode(root, 0);
     
-    for (int i = -1000; i < 1000; i++)
+    for (int i = 1; i <= 1000; i++)
     {
-        if(0 != i) 
-        {
-            insertNode(root, i);
-        };
+        insertNode(root, i);
+    }
+    for (int i = -1000; i < -1; i++)
+    {
+        insertNode(root, i);
     }
 
     // Search for a node with key 60
